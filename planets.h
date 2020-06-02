@@ -10,7 +10,7 @@ public:
     int arr_size_str; //кол. строк в массиве
     int arr_size_clmn;//кол. столбцов в массиве
     void readFile(string path);
-    string arr[100];
+    string arr[5][4];
 
 };
 

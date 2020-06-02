@@ -68,7 +68,7 @@ void Menu::DisplayOptionsMenu()
 
 void Menu::Options()
 {
-    string pathtofile= "/home/uleo/CLionProjects/Semestr2/plantes.txt";
+    string pathtofile= "/home/uleo/CLionProjects/Semestr02/planetsList.txt";
     Planets p;
 
     int choice = 0;
