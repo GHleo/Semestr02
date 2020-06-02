@@ -3,4 +3,4 @@ project(Semestr02)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Semestr02 main.cpp)
+add_executable(Semestr02 main.cpp planets.cpp planets.h menu.cpp menu.h)
