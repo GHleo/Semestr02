@@ -29,7 +29,7 @@ void  Planets::readFile(string path)//метод объявляется в за�
             cout << endl;
     }
 
-    Planets::sortArr(arr);
+    sortArr(arr);
 }
 void Planets::temp()
     {
