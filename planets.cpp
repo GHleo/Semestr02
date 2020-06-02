@@ -6,7 +6,7 @@
 using namespace std;
 
 //функция чтения файла
-void  Planets::readFile(string path, bool isSort)//метод объявляется в заголовочном файле
+void  Planets::readFile(string path, bool isSort, bool isEdit)//метод объявляется в заголовочном файле
 {
     arr_size_str =  10;
     arr_size_clmn =  4;
@@ -32,7 +32,8 @@ void  Planets::readFile(string path, bool isSort)//метод объявляет
             cout << endl;
     }
 
-    if (isSort==true) {sortArr(arr);}
+    if (isSort==true) {sortArr(arr);}//если необходима сортировка массива\данных из файла
+    if (isEdit==true) {editArr(arr);}//если необходимо редактирование массива\данных из файла
 }
 //функция для сортировки массива
 void Planets::sortArr(string arr_[10][4])
@@ -55,6 +56,40 @@ void Planets::sortArr(string arr_[10][4])
         }
         cout <<"\n";
     }
+}
+
+//функция для редактирования данных массива
+void Planets::editArr(string arr_[10][4])
+{
+    string sourceValue, newValue, saccess=" ";
+    arr_size_str =  10;
+    arr_size_clmn =  4;
+    cout << "Vvodim Name for edit \n"; //подсказка
+    cin >> sourceValue;//значение для редактирования
+    cout << "Vvodim new Name \n"; //подсказка
+    cin >> newValue;//новое значение
+    for (int i=0;i<arr_size_str;i++)
+    {
+        for(int j=0;j<arr_size_clmn;j++)
+        {
+            if (arr_[i][j] == sourceValue)//если нашли значение на редактирование - меняем на новое
+            {
+                arr_[i][j] = newValue;
+                saccess = "Value: "+sourceValue + " - Edited on " + newValue; //заполняем локальную переменная для вывода на печать информации о редактировании
+            }
+        }
+    }
+    if (saccess == " ") saccess = "Value: "+sourceValue + " - not Edited!";//заполняем переменную для вывода на печать информации о редактировании (если редактирования не произошло)
+    cout<<saccess<<endl;//вывод на печать информации о редактировании
+    //Вывод на печать итогового массива
+    cout<<endl;
+    cout<<"Название "<<"Диаметр "<<"Жизнь "<<"Спутники "<<endl;
+    for (int i = 0; i < arr_size_str; i++)
+    {
+        cout << arr_[i][0] << "  "<< arr_[i][1] << "       "<< arr_[i][2]<< "     "<< arr_[i][3]; //вывод пстрочно
+        cout << endl;
+    }
+
 }
 
 //функция чтения файла

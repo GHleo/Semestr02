@@ -87,13 +87,13 @@ void Menu::Options()
                 p.writeFile(pathtofileTo);
                 break;
             case 3:
-                p.readFile(pathtofile,true);
+                p.readFile(pathtofile,true, false);
                 break;
             case 4:
-                cout << "Edit ???";
+                p.readFile(pathtofile,false,true);;
                 break;
             case 5:
-                p.readFile(pathtofile,false);
+                p.readFile(pathtofile,false,false);
                 break;
             default:
                 break;
