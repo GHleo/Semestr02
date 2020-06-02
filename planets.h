@@ -9,7 +9,8 @@ class Planets {
 public:
     int arr_size_str; //кол. строк в массиве
     int arr_size_clmn;//кол. столбцов в массиве
-    void readFile(string path);
+    void readFile(string path, bool isSort);//path- путь к файлу; isSort - вывод с сортировкой если True
+    void  writeFile(string pathTo);
     void sortArr(string arr_[10][4]);
     string arr[10][4];
     void temp();

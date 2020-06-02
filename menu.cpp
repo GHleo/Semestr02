@@ -69,7 +69,8 @@ void Menu::DisplayOptionsMenu()
 void Menu::Options()
 {
     string pathtofile= "/home/uleo/CLionProjects/Semestr02/planetsList.txt";
-    Planets p;
+    string pathtofileTo= "/home/uleo/CLionProjects/Semestr02/planetsList2.txt";
+    Planets p; // Создали объект класса Planets
 
     int choice = 0;
     do
@@ -83,16 +84,16 @@ void Menu::Options()
                 cout << "DB opened!";
                 break;
             case 2:
-                cout << "Write ???";
+                p.writeFile(pathtofileTo);
                 break;
             case 3:
-                cout << "Sort ???";
+                p.readFile(pathtofile,true);
                 break;
             case 4:
                 cout << "Edit ???";
                 break;
             case 5:
-                p.readFile(pathtofile);
+                p.readFile(pathtofile,false);
                 break;
             default:
                 break;
