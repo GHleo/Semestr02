@@ -130,7 +130,7 @@ ostream &operator<<( ostream &output, const Planets &P ) {
     output << P.arr;
     return output;
 }
-//Перегружаем операцию “ >> “
+//Перегружаем операцию “ >> “ для функции writeFile()
 istream &operator>>( istream  &input, Planets &P ) {
     input >> P.sinchar;
     return input;
