@@ -97,7 +97,6 @@ void  Planets::writeFile(string pathTo)//метод объявляется в з
 {
     arr_size_str =  2;//кол. строк
     arr_size_clmn =  4;//кол. столбцов
-    string s;//переменная для сохранения считываемых символов введенных с клавиатуры
 
     fstream inOut;
     inOut.open(pathTo, ios::out);// окрываем файл для записи
@@ -110,8 +109,8 @@ void  Planets::writeFile(string pathTo)//метод объявляется в з
         {
             cout << "Vvodim " << i + 1 << " stroku\n"; //подсказка
             for (int j = 0; j < arr_size_clmn; j++) {
-                cin >> s;              //запоминаем введенное значение с клав.
-                inOut << s << " "; //запись в файл
+                cin >> sinchar;              //запоминаем введенное значение с клав.
+                inOut << sinchar << " "; //запись в файл
             }
             inOut <<endl;
         }
@@ -126,4 +125,14 @@ void  Planets::writeFile(string pathTo)//метод объявляется в з
     }
 
     if (isSort==true) {sortArr(arr);}*/
+}
+
+ostream &operator<<( ostream &output, const Planets &P ) {
+    output << P.arr;
+    return output;
+}
+
+istream &operator>>( istream  &input, Planets &P ) {
+    input >> P.sinchar;
+    return input;
 }
