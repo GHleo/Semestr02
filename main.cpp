@@ -10,9 +10,9 @@ int main()
 {
     Menu m; //Создаем объект класса Menu
     //m.PrintMenu();
-    string file_name = "/home/uleo/CLionProjects/Semestr2/plantes.txt";
+/*    string file_name = "/home/uleo/CLionProjects/Semestr2/plantes.txt";
     Planets p;
-    p.readFile(file_name,false,false);
+    p.readFile(file_name,false,false);*/
 
     int choice = 0;
     do

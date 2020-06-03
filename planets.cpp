@@ -126,12 +126,12 @@ void  Planets::writeFile(string pathTo)//метод объявляется в з
 
     if (isSort==true) {sortArr(arr);}*/
 }
-
+//Перегружаем операцию “ << “
 ostream &operator<<( ostream &output, const Planets &P ) {
     output << P.arr;
     return output;
 }
-
+//Перегружаем операцию “ >> “
 istream &operator>>( istream  &input, Planets &P ) {
     input >> P.sinchar;
     return input;
