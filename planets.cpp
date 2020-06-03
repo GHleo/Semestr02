@@ -74,7 +74,7 @@ void Planets::editArr(string arr_[10][4])
             if (arr_[i][j] == sourceValue)//если нашли значение на редактирование - меняем на новое
             {
                 arr_[i][j] = newValue;
-                saccess = "Value: "+sourceValue + " - Edited on " + newValue; //заполняем локальную переменная для вывода на печать информации о редактировании
+                saccess = "Value: "+sourceValue + " - Edited on " + newValue; //заполняем переменная для вывода на печать информации о редактировании
             }
         }
     }
@@ -141,4 +141,11 @@ bool operator==(Planets &p1, Planets &p2)
 {
     int i,j;
     return ( p1.arr[i][j] == p2.sourceValue);
+}
+
+//Перегружаем '<' оператор для функции sortArr()
+bool operator<(Planets &p1, Planets &p2)
+{
+    int i,j;
+    return ( p1.arr[i][j] < p2.arr[i][j]);
 }
