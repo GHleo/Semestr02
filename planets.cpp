@@ -61,7 +61,6 @@ void Planets::sortArr(string arr_[10][4])
 //функция для редактирования данных массива
 void Planets::editArr(string arr_[10][4])
 {
-    string sourceValue, newValue, saccess=" ";
     arr_size_str =  10;
     arr_size_clmn =  4;
     cout << "Vvodim Name for edit \n"; //подсказка
@@ -135,4 +134,11 @@ ostream &operator<<( ostream &output, const Planets &P ) {
 istream &operator>>( istream  &input, Planets &P ) {
     input >> P.sinchar;
     return input;
+}
+
+//Перегружаем '==' оператор
+bool operator==(Planets &p1, Planets &p2)
+{
+    int i,j;
+    return ( p1.arr[i][j] == p2.sourceValue);
 }
