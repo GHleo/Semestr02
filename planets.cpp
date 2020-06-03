@@ -136,7 +136,7 @@ istream &operator>>( istream  &input, Planets &P ) {
     return input;
 }
 
-//Перегружаем '==' оператор
+//Перегружаем '==' оператор для функции editArr()
 bool operator==(Planets &p1, Planets &p2)
 {
     int i,j;
