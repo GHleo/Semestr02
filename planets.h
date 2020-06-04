@@ -22,9 +22,6 @@ public:
     void sortArr(string arr_[10][4]);
     void editArr(string arr_[10][4]);
     string arr[10][4];
-    void temp();
-
-
 
     friend ostream& operator<<(ostream &output, Planets &P ); //Перегружаем операцию “ << “ для классов «Планета» как friend класса.
     friend istream &operator>>(istream  &input, Planets &P ); //Перегружаем операцию “ >> “ для класса «Планета»  как friend класса.

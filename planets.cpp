@@ -38,7 +38,9 @@ string Planets::GetB(void) { return newValue; }*/
 //void  Planets::readFile(string path, bool isSort, bool isEdit)//метод объявляется в заголовочном файле
 void  Planets::readFile(string path, bool isSort, bool isEdit)
 {
-   // arr_size_str =  10;
+    string (*ptr)[4];
+    ptr = arr;
+    // arr_size_str =  10;
    // arr_size_clmn =  4;
     ifstream file_out; // окрываем файл для чтения
     file_out.open(path);
@@ -61,6 +63,11 @@ void  Planets::readFile(string path, bool isSort, bool isEdit)
             cout << arr[i][0] << "  "<< arr[i][1] << "       "<< arr[i][2]<< "     "<< arr[i][3]; //вывод пстрочно
             cout << endl;
     }
+/*    for (int i = 0; i < arr_size_str; i++)
+    {
+        cout << ptr[i][0] << "  "<< ptr[i][1] << "       "<< ptr[i][2]<< "     "<< ptr[i][3]; //вывод пстрочно
+        cout << endl;
+    }*/
 
     if (isSort==true) {sortArr(arr);}//если необходима сортировка массива\данных из файла
     if (isEdit==true) {editArr(arr);}//если необходимо редактирование массива\данных из файла
@@ -125,8 +132,8 @@ void Planets::editArr(string arr_[10][4])
 //функция чтения файла
 void  Planets::writeFile(string pathTo)//метод объявляется в заголовочном файле
 {
-    arr_size_str =  2;//кол. строк
-    arr_size_clmn =  4;//кол. столбцов
+    //arr_size_str =  2;//кол. строк
+    //arr_size_clmn =  4;//кол. столбцов
 
     fstream inOut;
     inOut.open(pathTo, ios::out);// окрываем файл для записи
