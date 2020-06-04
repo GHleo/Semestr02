@@ -8,6 +8,11 @@ using namespace std;
 
 class Planets {
 public:
+    Planets(void);  // конструктор класса по умолчанию
+    Planets(int s,int c); //инициализация полей размерности массива
+    Planets(const Planets &ref_op);    // Прототип конструктора копирования
+    ~Planets();// Деструктор класса
+
     int arr_size_str; //кол. строк в массиве
     int arr_size_clmn;//кол. столбцов в массиве
     string sourceValue, newValue, saccess=" ";
@@ -18,6 +23,8 @@ public:
     void editArr(string arr_[10][4]);
     string arr[10][4];
     void temp();
+
+
 
     friend ostream& operator<<(ostream &output, Planets &P ); //Перегружаем операцию “ << “ для классов «Планета» как friend класса.
     friend istream &operator>>(istream  &input, Planets &P ); //Перегружаем операцию “ >> “ для класса «Планета»  как friend класса.

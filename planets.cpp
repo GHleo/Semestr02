@@ -5,11 +5,41 @@
 
 using namespace std;
 
-//функция чтения файла
-void  Planets::readFile(string path, bool isSort, bool isEdit)//метод объявляется в заголовочном файле
+// Деструктор класса Planets
+Planets::~Planets()
 {
-    arr_size_str =  10;
-    arr_size_clmn =  4;
+    // Динамически удаляем массив, который выделили ранее
+    //delete[] arr;
+}
+
+Planets::Planets(void)
+{
+}
+
+Planets::Planets(int s,int c)
+{
+    arr_size_str = s;
+    arr_size_clmn = c;
+}
+
+//конструктор копирования
+Planets::Planets(const Planets &ref_op)
+{
+    // копирование данных из одного объекта в другой
+    arr_size_str = ref_op.arr_size_str;
+    arr_size_clmn= ref_op.arr_size_clmn;
+}
+
+/*string Planets::GetA(void) { return sourceValue;}
+string Planets::GetB(void) { return newValue; }*/
+
+
+//функция чтения файла
+//void  Planets::readFile(string path, bool isSort, bool isEdit)//метод объявляется в заголовочном файле
+void  Planets::readFile(string path, bool isSort, bool isEdit)
+{
+   // arr_size_str =  10;
+   // arr_size_clmn =  4;
     ifstream file_out; // окрываем файл для чтения
     file_out.open(path);
     if (!file_out.is_open())
@@ -34,13 +64,14 @@ void  Planets::readFile(string path, bool isSort, bool isEdit)//метод об�
 
     if (isSort==true) {sortArr(arr);}//если необходима сортировка массива\данных из файла
     if (isEdit==true) {editArr(arr);}//если необходимо редактирование массива\данных из файла
+
 }
 //функция для сортировки массива
 void Planets::sortArr(string arr_[10][4])
 {
 
-    arr_size_str =  10;
-    arr_size_clmn =  4;
+/*    arr_size_str =  10;
+    arr_size_clmn =  4;*/
     for (int i=0;i<arr_size_str;i++)
     {
         for(int j=0;j<arr_size_clmn;j++)
@@ -61,8 +92,8 @@ void Planets::sortArr(string arr_[10][4])
 //функция для редактирования данных массива
 void Planets::editArr(string arr_[10][4])
 {
-    arr_size_str =  10;
-    arr_size_clmn =  4;
+   // arr_size_str =  10;
+   // arr_size_clmn =  4;
     cout << "Vvodim Name for edit \n"; //подсказка
     cin >> sourceValue;//значение для редактирования
     cout << "Vvodim new Name \n"; //подсказка

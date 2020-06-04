@@ -14,6 +14,11 @@ int main()
     Planets p;
     p.readFile(file_name,false,false);*/
 
+/*    Planets p1; // создание объекта p1
+    Planets p2(10, 4); // создание объекта p2 - вызывается конструктор по умолчанию
+    Planets p3 = p2;// инициализация объекта => вызывается конструктор копирования*/
+
+
     int choice = 0;
     do
     {

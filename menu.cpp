@@ -71,6 +71,8 @@ void Menu::Options()
     string pathtofile= "/home/uleo/CLionProjects/Semestr02/planetsList.txt";
     string pathtofileTo= "/home/uleo/CLionProjects/Semestr02/planetsList2.txt";
     Planets p; // Создали объект класса Planets
+    Planets p2(10, 4); // создание объекта p2 - вызывается конструктор по умолчанию
+    Planets p3 = p2;// инициализация объекта => вызывается конструктор копирования
 
     int choice = 0;
     do
@@ -84,16 +86,16 @@ void Menu::Options()
                 cout << "DB opened!";
                 break;
             case 2:
-                p.writeFile(pathtofileTo);
+                p3.writeFile(pathtofileTo);
                 break;
             case 3:
-                p.readFile(pathtofile,true, false);
+                p3.readFile(pathtofile,true, false);
                 break;
             case 4:
-                p.readFile(pathtofile,false,true);;
+                p3.readFile(pathtofile,false,true);;
                 break;
             case 5:
-                p.readFile(pathtofile,false,false);
+                p3.readFile(pathtofile,false,false);
                 break;
             default:
                 break;
