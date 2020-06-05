@@ -30,9 +30,21 @@ Planets::Planets(const Planets &ref_op)
     arr_size_clmn= ref_op.arr_size_clmn;
 }
 
-/*string Planets::GetA(void) { return sourceValue;}
-string Planets::GetB(void) { return newValue; }*/
+// перегруженный оператор '='
+/*Planets::operator=(Planets cm)
+{
+    real = cm.real;
+    imag = cm.imag;
+    return *this; // возвращает объект, который сгенерировал вызов
+}
 
+ //T is some type
+T& operator=(const T& other)
+{
+    //Do something (like copying values)
+    return *this;
+}
+ */
 
 //функция чтения файла
 //void  Planets::readFile(string path, bool isSort, bool isEdit)//метод объявляется в заголовочном файле

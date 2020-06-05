@@ -27,6 +27,8 @@ public:
     friend istream &operator>>(istream  &input, Planets &P ); //Перегружаем операцию “ >> “ для класса «Планета»  как friend класса.
     friend bool operator==(Planets &p1, Planets &p2);//Перегружае операцию сравнения “ <  и ==” для класса «Планета», использовав для этого значение одного из полей как friend класса.
     friend bool operator<(Planets &p1, Planets &p2);
+    // перегруженный оператор '='
+
 
 };
 ostream& operator<<(ostream &output, Planets &P );//Перегружаем операцию “ << “ для классов «Планета»  и ofstream для вывода на экран данных из массива.
